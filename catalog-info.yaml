@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: app-demo-spec-sample
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-id: "app-demo-spec-sample"
+    github.com/project-slug: veecode-apr/app-demo-spec-sample
+    vault.io/secrets-path: "app-demo-spec-sample"
+    grafana/dashboard-selector: "app-demo-spec-sample"
+    grafana/alert-label-selector: "alertname=app-demo-spec-sample"
+    argocd/proxy-url: '/argocd/api'
+    argocd/app-name: "app-demo-spec-sample"
+    kong-manager/service-name: veecode-apr.app-demo-spec-sample-service-0.8081
+    kong-manager/instance: /kong-manager/api
+spec:
+  type: service
+  lifecycle: experimental
+  owner: admin
+
+
+

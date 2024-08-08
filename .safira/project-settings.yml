@@ -1,0 +1,8 @@
+project:
+  name: app-demo-spec-sample
+  description: 
+  java:
+    package: codes.platform.appExamplePlatform
+  language: java
+  framework: springboot
+  applicationPort: 8081
