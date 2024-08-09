@@ -74,6 +74,7 @@ jobs:
 
       - name: Publish K8S Artifact
         uses: dmnemec/copy_file_to_another_repo_action@main
+        continue-on-error: true
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
@@ -112,6 +113,7 @@ jobs:
           inso-version: 3.12.0
 
       - name: Exporting openapi from insomnia workspace
+        continue-on-error: true
         if: steps.check_inso_workspace.outputs.files_exists == 'true'
         run: |
           inso export spec "$(cat .insomnia/ApiSpec/spc_*.yml | yq '.fileName')"  --output ./openapi-swagger.yaml
@@ -151,6 +153,7 @@ jobs:
 
       - name: Publish to spec house
         uses: dmnemec/copy_file_to_another_repo_action@main
+        continue-on-error: true
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
